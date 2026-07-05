@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Organizer — Folders, Search & Export for Claude.ai</title>
+    <meta
+      name="description"
+      content="Claude Organizer is a Chrome extension that adds folders, fast search, bookmarks and full-conversation export to Claude.ai, so you can finally organize your AI chats."
+    />
+    <style>
+      :root {
+        --terra: #d97757;
+        --terra-dark: #c86647;
+        --ink: #1f1f1f;
+        --muted: #6b6b6b;
+        --line: #e5e2dc;
+        --cream: #faf8f5;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: var(--ink);
+        line-height: 1.6;
+        background: #fff;
+      }
+      a { color: var(--terra); }
+      .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+      header.hero {
+        background: linear-gradient(160deg, #fff 0%, var(--cream) 100%);
+        border-bottom: 1px solid var(--line);
+        padding: 64px 0 56px;
+        text-align: center;
+      }
+      .logo {
+        width: 64px; height: 64px; border-radius: 16px;
+        background: var(--terra); color: #fff;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 32px; margin-bottom: 20px;
+      }
+      h1 { font-size: 40px; line-height: 1.15; margin: 0 0 14px; }
+      .sub { font-size: 19px; color: var(--muted); max-width: 620px; margin: 0 auto 28px; }
+      .cta {
+        display: inline-block; background: var(--terra); color: #fff;
+        text-decoration: none; font-weight: 600; font-size: 16px;
+        padding: 13px 26px; border-radius: 10px;
+      }
+      .cta:hover { background: var(--terra-dark); }
+      .cta.secondary { background: #fff; color: var(--terra); border: 1px solid var(--terra); margin-left: 8px; }
+      section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+      h2 { font-size: 27px; margin: 0 0 8px; }
+      .lead { color: var(--muted); margin: 0 0 32px; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+      .card { border: 1px solid var(--line); border-radius: 12px; padding: 20px; background: var(--cream); }
+      .card h3 { margin: 0 0 6px; font-size: 17px; }
+      .card p { margin: 0; color: var(--muted); font-size: 15px; }
+      .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .plan { border: 1px solid var(--line); border-radius: 14px; padding: 26px 22px; text-align: center; }
+      .plan.featured { border-color: var(--terra); box-shadow: 0 8px 30px rgba(217, 119, 87, 0.15); }
+      .plan .name { font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 12px; }
+      .plan .price { font-size: 34px; font-weight: 700; margin: 10px 0 2px; }
+      .plan .per { color: var(--muted); font-size: 14px; }
+      .plan ul { list-style: none; padding: 0; margin: 18px 0 0; text-align: left; font-size: 14px; }
+      .plan li { padding: 5px 0 5px 24px; position: relative; }
+      .plan li::before { content: "✓"; position: absolute; left: 0; color: #4a9e5c; font-weight: 700; }
+      .badge { display: inline-block; background: var(--terra); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; margin-bottom: 10px; }
+      .faq h3 { margin: 22px 0 4px; font-size: 17px; }
+      .faq p { margin: 0; color: var(--muted); }
+      footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px; }
+      footer a { margin: 0 8px; }
+      @media (max-width: 640px) {
+        .grid, .pricing { grid-template-columns: 1fr; }
+        h1 { font-size: 32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="logo">📂</div>
+        <h1>Finally organize your Claude.ai chats</h1>
+        <p class="sub">
+          Claude Organizer is a Chrome extension that adds folders, fast search, bookmarks and
+          full-conversation export to Claude.ai — right inside the page you already use.
+        </p>
+        <a class="cta" href="#pricing">See pricing</a>
+        <a class="cta secondary" href="#features">What it does</a>
+      </div>
+    </header>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Everything you wish Claude had</h2>
+        <p class="lead">Lightweight, private, and built right into the Claude.ai interface.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>📁 Folders</h3>
+            <p>Group related conversations into folders so your work stops getting lost in an endless list.</p>
+          </div>
+          <div class="card">
+            <h3>🔍 Fast search</h3>
+            <p>Instantly find any saved chat by title — no more scrolling forever to find that one conversation.</p>
+          </div>
+          <div class="card">
+            <h3>⭐ Bookmarks</h3>
+            <p>Pin the chats you return to most and keep them one click away.</p>
+          </div>
+          <div class="card">
+            <h3>⭳ Full-chat export</h3>
+            <p>Save an entire conversation — from the very first message — as a clean file, or copy it to paste anywhere.</p>
+          </div>
+          <div class="card">
+            <h3>🖱️ Drag &amp; drop</h3>
+            <p>Move chats between folders with a simple drag. Organizing takes seconds.</p>
+          </div>
+          <div class="card">
+            <h3>🔒 100% private</h3>
+            <p>Everything is stored locally in your own browser. Your conversations never leave your device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>Simple pricing</h2>
+        <p class="lead">Start free. Upgrade when you need the power features.</p>
+        <div class="pricing">
+          <div class="plan">
+            <div class="name">Free</div>
+            <div class="price">€0</div>
+            <div class="per">forever</div>
+            <ul>
+              <li>Up to 3 folders</li>
+              <li>Search &amp; bookmarks</li>
+              <li>Drag &amp; drop</li>
+              <li>Export the visible part of a chat</li>
+            </ul>
+          </div>
+          <div class="plan featured">
+            <span class="badge">Most popular</span>
+            <div class="name">Pro — Monthly</div>
+            <div class="price">€4.99</div>
+            <div class="per">per month</div>
+            <ul>
+              <li>Unlimited folders</li>
+              <li>Full-chat export from the start</li>
+              <li>Bulk export a whole folder</li>
+              <li>Search inside chat content</li>
+            </ul>
+          </div>
+          <div class="plan">
+            <div class="name">Pro — Lifetime</div>
+            <div class="price">€34.99</div>
+            <div class="per">one-time</div>
+            <ul>
+              <li>Everything in Pro</li>
+              <li>Pay once, yours forever</li>
+              <li>All future updates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap">
+        <h2>Questions</h2>
+        <h3>Does it work with my existing Claude account?</h3>
+        <p>Yes. Install the extension, open claude.ai, and a small 📂 button appears. Nothing changes about how you use Claude.</p>
+        <h3>Where is my data stored?</h3>
+        <p>Only in your own browser (Chrome's local storage). Claude Organizer has no servers and never uploads your conversations.</p>
+        <h3>How do payments work?</h3>
+        <p>Payments are securely handled by Lemon Squeezy. After you buy Pro, you receive a license key by email that unlocks the premium features.</p>
+        <h3>Can I cancel a subscription?</h3>
+        <p>Anytime. Your Pro features stay active until the end of the paid period, then the extension returns to the free plan.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>Claude Organizer is an independent tool by LTech (Lyubenov Technologies). Not affiliated with Anthropic.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="mailto:SUPPORT_EMAIL_PLACEHOLDER">Contact</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
